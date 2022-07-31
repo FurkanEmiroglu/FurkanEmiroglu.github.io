@@ -4392,7 +4392,7 @@ fieldset:disabled .btn {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 2px solid #f4f6f8;
+  border: 2px solid #fff6f8;
   border-radius: 10px;
 }
 
@@ -4425,7 +4425,7 @@ fieldset:disabled .btn {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 2rem 2rem;
+  padding: 3rem 3rem;
 }
 
 .card-title {
