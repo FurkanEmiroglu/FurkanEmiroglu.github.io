@@ -1,119 +1,119 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
-    <link rel="icon" href="images/favicon.png">
-    <link rel="preload" as="style"
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"
-          media="print" onload="this.media='all'"/>
-    <noscript>
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
-    </noscript>
-    <link href="./css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
-</head>
-<body id="top">
-<header class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
-        <div class="container"><a class="link-dark navbar-brand site-title ps-lg-0" href="#"
-                                  style="font-family: 'MV Boli',serif">Welcome!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto me-2">
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publishedGames.html">Published Games</a></li>
-                </ul>
-            </div>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | URPShaderLibrary</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
-    </nav>
-
-</header>
-    <div class="wave-bg"></div>
-        </header>
-        <div class="section pt-4 px-3 px-lg-4" id="about">
-            <div class="container-narrow">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="h1 my-2">Some WebGL Demos here</h1>
-                        <p>
-                            <h3 class="h5 my-2">Rollball Color Sorting</h3>
-                            Hyper-casual ASMR game with a vertex-deforming shader mechanic. Solo developed by me.
-
-                            </div>
-                                <div class="col-md-4 offset-md-1" data-aos="fade-left" data-aos-delay="100">
-
-                                    
-                            </div>
-                        <p>
-                </div>
-            </div>
-        </div>
-        
-
-
-<footer class="pt-4 pb-4 text-center bg-light">
-    <div class="container">
-        <div class="my-3">
-            <div class="h4">Furkan Emiroglu</div>
-            <p>Game Developer</p>
-            <div class="social-nav">
-                <nav role="navigation">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item"><a class="nav-link"
-                                                href="mailto:emiroglu.furkan@gmail.com"
-                                                target="_blank"
-                                                title="Gmail"><i class="bi-envelope-fill"></i><span
-                                class="menu-title sr-only">Gmail</span></a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="https://github.com/FurkanEmiroglu"
-                                                target="_blank"
-                                                title="GitHub"><i class="fab fa-github"></i><span
-                                class="menu-title sr-only">GitHub</span></a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="https://www.linkedin.com/in/furkanemiroglu/"
-                                                target="_blank"
-                                                title="LinkedIn"><i
-                                class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="https://www.youtube.com/user/MsOlympicFlame/videos"
-                                                target="_blank"
-                                                title="Youtube"><i
-                                class="fab fa-youtube"></i><span class="menu-title sr-only">Youtube</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">URPShaderLibrary</div>
+      </div>
     </div>
-</footer>
-</div>
-</div>
-<div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i
-        class="fas fa-angle-up fa-x"></i></span></a>
-</div>
-<script src="./scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
-<script src="./scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
-<script src="./scripts/BigPicture.min.js?ver=1.2.0"></script>
-<script src="./scripts/purecounter.min.js?ver=1.2.0"></script>
-<script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
-<script src="./scripts/aos.min.js?ver=1.2.0"></script>
-<script src="./scripts/main.js?ver=1.2.0"></script>
-</body>
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Deneme.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/Deneme.data.br",
+        frameworkUrl: buildUrl + "/Deneme.framework.js.br",
+        codeUrl: buildUrl + "/Deneme.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "URPShaderLibrary",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
 </html>
