@@ -1,0 +1,603 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>lightbake-tutor</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='lighting-basics-in-unitydiv-styletext-align-justify'><span>Lighting Basics in Unity</span><div style="text-align: justify;"></h1><p><span>In this document, we&#39;ll be discussing lighting settings in Unity.</span></p><p><span>When we want to add light to our scene in Unity, we can see that Unity offers us four different types of lights.</span></p><p><img src="Resources/Lightbaking/LightAdding.png" referrerpolicy="no-referrer" alt="&quot;LightAdding"></p><p><span>Although most games have only a Directional Light in the scene, there are also options for other types of lights such as Point Light, Spotlight, and Area Light. In every Unity scene, existing lights work in two different groups: </span><strong><span>Main Light</span></strong><span> and </span><strong><span>Additional Lights</span></strong><span>.</span></p><p><span>The main light in the scene is the main light of the scene if there is a light designated as &quot;Sun Source&quot; in the Window / Lighting / Environment window. If no sun source is marked, Unity automatically selects the brightest &#39;Directional Light&#39; type light in the scene as the Main Light.</span></p><p><img src="Resources/Lightbaking/SunSource.png" referrerpolicy="no-referrer" alt="&quot;SunSource"></p><p><span>Skybox Renderer and Shader files have easy access to the light marked as the main light in the scene and use them for necessary shading calculations.</span></p><p><span>If there are other lights in the scene besides the main light, make sure that the Additional Lights setting is not disabled in the Universal Render Pipeline Asset used by the project.</span></p><p><span>Although there can be many lights in a scene, when the project uses the Forward Renderer path, there is a limit to how many different lights an object can be affected by, which is currently 8 lights. If the project uses the Deferred Rendering Path, this limit will only apply to materials that have passes marked as ForwardRendering in their shader, and this limit will be lifted for all other materials.</span></p><p><strong><span>Note:</span></strong><span> You can find the Render Pipeline Asset file used by the project at Edit / Project Settings / Graphics tab, and you can see where it is located in the project directory by double-clicking.</span></p><p><span>If there are multiple Directional Lights in the scene and you want to designate the light with less brightness than the others as the Sun source, you can achieve this by marking the Render Mode of only the Directional Light you want as the Main Light as important in the inspector and marking the others as not important. If all directional lights have Render Mode set to auto and the Lighting / Environment / Sun source section is empty, Unity will still automatically select the brightest Directional Light as the main light.</span></p><p><img src="Resources/Lightbaking/LightComponentRenderMode.png" referrerpolicy="no-referrer" alt="&quot;LightComponentRenderMode&quot;"></p><ul><li><p><span>When we examine the &#39;Light&#39; component of any Light we added to the scene, we will see the Mode option under the General tab. The Mode setting offers us three options:</span></p><ul><li><p><strong><span>Realtime:</span></strong><span> Lights using this mode will perform lighting and shading calculations during gameplay. This allows shadows cast by moving (dynamic) objects to behave dynamically based on their movements. For example, shadows cast by our character in the game, just like moving vehicles, will be calculated in real-time, and their shadows will also change shape based on their movements. Although necessary for dynamic objects, it is a method with high performance costs.</span></p></li><li><p><strong><span>Mixed:</span></strong><span> Lights using this mode use the &#39;Baked&#39; mode for objects marked as &#39;Static&#39; in the scene, while using the Realtime mode for moving objects.</span></p></li><li><p><strong><span>Baked:</span></strong><span> Lights using this mode do not perform any calculations during gameplay. They have no effect on dynamic objects. They only transfer the lighting baked in Unity Editor to a texture for objects marked as &#39;Static&#39;. As a result, a texture called Lightmap is created. During gameplay, objects illuminate themselves by reading the appropriate data from the Lightmap texture. This allows pre-baked, high-quality lighting to be achieved. Since no calculations are performed during gameplay, it is a very efficient method. However, shadows of objects and Ambient Occlusion properties do not change with the object&#39;s closure or movement.</span></p></li></ul></li></ul><h2 id='example-lightmapping-application'><span>Example Lightmapping Application</span></h2><ol start='' ><li><p><span>Make sure the Generate Lightmap UV option is enabled for our models in the scene.</span></p></li></ol><p><img src="Resources/Lightbaking/ModelSelection.png" referrerpolicy="no-referrer" alt="&quot;ModelSecimi&quot;"></p><p><span>Since I only want interior baked lighting in the scene, I make sure that there is no light in the scene, including the Directional Light. Then, in my hierarchy, I mark the objects that will not move during gameplay as static.</span></p><ol start='2' ><li><p><span>In the hierarchy, I mark the objects that will not move during gameplay as static. Baked Lights are not calculated for non-static objects.</span></p></li></ol><p><img src="Resources/Lightbaking/StaticSelection.png" referrerpolicy="no-referrer" alt="&quot;StaticSecimi"></p><ol start='3' ><li><p><span>I create the lights I want to add to my scene and place them where I want them to be.</span></p></li></ol><p><img src="Resources/Lightbaking/LightAdding.png" referrerpolicy="no-referrer" alt="&quot;LightEkleme&quot;"></p><ol start='4' ><li><p><span>I set the lighting type of the lights in the scene to &quot;Baked&quot;.</span></p></li></ol><p><img src="Resources/Lightbaking/SetAsBakedType.png" referrerpolicy="no-referrer" alt="&quot;BakeOlarakSet&quot;"></p><ol start='5' ><li><p><span>If I&#39;m using URP Render Pipeline, I make sure that Additional Lights is not disabled. (Lights other than Directional Light, especially those not marked as main light, are considered Additional Light.)</span></p></li></ol><p><img src="Resources/Lightbaking/URPAssetSettings.png" referrerpolicy="no-referrer" alt="&quot;AdditionalLightsURPAsset&quot;"></p><ol start='6' ><li><p><span>We open the lighting window from the Window / Rendering menu. If we don&#39;t have a lighting Settings Asset, we create a new settings asset with the &#39;New Lighting Settings&#39; button. Under the Mixed Lighting heading, make sure the &#39;Baked Global Illumination&#39; option is enabled. After configuring the Lightmapping settings, we calculate the lighting for the scene with the &#39;Generate Lighting&#39; button.</span></p></li></ol><p><strong><span>Sonuç:</span></strong>
+<img src="Resources/Lightbaking/BakedRoomVisual.png" referrerpolicy="no-referrer" alt="&quot;BakedInteriorVisual&quot;"></p><ul><li><p><span>We achieved high-quality Ambient Occlusion and Shading for static objects. At the same time, by preventing the Shadow pass from being called at runtime for static objects, we gained performance improvement.</span></p></li><li><p><span>Since static objects are marked not only as Contribute GI but also as Batch mode static, Unity combines these static meshes, thereby reducing the number of draw calls and achieving performance gains.</span></p></li></ul><h2 id='lighting-settings'><span>Lighting Settings</span></h2><p><img src="Resources/Lightbaking/LightmappingSettings.png" referrerpolicy="no-referrer" alt="&quot;LightmappingSettings&quot;"></p><ul><li><p><strong><span>Lighting Mode:</span></strong><span> This is a bit complicated. It would be a much more efficient solution for mobile to achieve the desired image using &#39;Subtractive&#39;. Other options should only be considered when we cannot achieve the desired image.</span></p></li><li><p><strong><span>Lightmapper:</span></strong><span> The choice of technology used in light creation. Use Progressive GPU if available. It will shorten the calculation time. If using Mac devices, definitely use progressive GPU.</span></p></li><li><p><strong><span>Progressive Updates:</span></strong><span> Keeping it open extends the total calculation time. However, it allows you to get an idea before all calculations are completed about whether your configuration is good or bad by calculating the priority of where you are looking in your Scene View. It does not work well on Mac devices. If your total calculation time does not exceed 30 seconds to 1 minute, I do not recommend using it.</span></p></li><li><p><strong><span>Multiple Importance Sampling:</span></strong><span> When enabled, it speeds up system calculation processes. Keep it enabled if you do not experience noise issues in dark scenes. If you experience noise issues, you can try turning it off at the expense of longer calculation times.</span></p></li><li><p><strong><span>Direct Samples:</span></strong><span> Increasing it does not have a negative impact on game performance. As the number increases, the calculation time also increases significantly, but a higher quality lightmap is obtained. 32 is ideal for the beginning. After obtaining the desired light configuration, increasing it to 64-128 during the final bake process can attempt to achieve higher quality lighting before shipping the game.</span></p></li><li><p><strong><span>Indirect Samples:</span></strong><span> What is written for Direct Samples is also valid here. 256 is ideal for the beginning. Before shipping, values such as 512 or 1024 can be tried.</span></p></li><li><p><strong><span>Light Probe Sample Multiplier:</span></strong><span> If used, it determines how detailed the Light Probes will illuminate. Values like 4 - 8 are ideal. Increasing it can significantly extend the calculation time.</span></p></li><li><p><strong><span>Min / Max Bounces:</span></strong><span> Min can remain at 2, Max at 3. If there are dark areas in the scene, you can try values like 4-6. It adjusts the amount of light tabulation to be calculated in the indirect behavior of light.</span></p></li><li><p><strong><span>Filtering:</span></strong><span> It should preferably remain on Auto. If there is a Noise issue in the image, it can be tuned.</span></p></li><li><p><strong><span>Lightmap Resolution:</span></strong><span> It is one of the parameters that most affect the Texture Sizes going to the image and the game&#39;s build. It can start from 10 and gradually increase.</span></p></li><li><p><strong><span>Max Lightmap Size:</span></strong><span> If you experience Bleed issues in the image, you need to increase this value. </span><a href='https://www.reddit.com/r/Unity3D/comments/yczmyv/why_is_my_light_bleeding_through_the_walls/'><span>Bleed Issue</span></a></p></li><li><p><strong><span>Ambient Occlusion:</span></strong><span> It enables Ambient Occlusion Bake for static objects. It gives results for static objects at least as good as SSAO. It does not work for dynamic objects.</span></p></li><li><p><strong><span>Directional Mode:</span></strong><span> Keeping it open allows objects&#39; normal maps to be considered in light calculations. When closed, it causes a loss of depth perception depending on the geometry of some objects.</span></p></li><li><p><strong><span>Albedo Boost:</span></strong><span> It enhances the colors and brightness throughout the scene. It is achieved by multiplying the RGBA values by a coefficient of 1 or greater than 1.</span></p></li><li><p><strong><span>Indirect Intensity:</span></strong><span> For areas in the scene that are only indirectly illuminated without direct lighting, it creates an Albedo Boost effect.</span></p></li></ul><h2 id='lighting-probes'><span>Lighting Probes</span></h2><p><span>We created Global Illumination with the lightbaking process. However, if there is no light in any realtime mode in the scene, you will notice that non-static (dynamic) objects receive no light and appear dark.</span></p><p><span>If you want your dynamic objects to also receive lighting from the lights in &#39;Baked&#39; mode, you can use lighting probes. Lighting Probes are components that pre-calculate and bake the lights reaching certain points in the scene.</span></p><p><span>Thanks to probes, dynamic objects check which points the probes determine the amount of lighting for, and apply the lighting they should receive accordingly.</span></p><p><span>Let&#39;s do an example application.</span></p><p><span>As you can see in the image below, there is a capsule in the scene that receives no lighting because it is not marked as &#39;Static&#39;. Since all the lights in the scene are in &#39;Baked&#39; mode, there is no lighting for dynamic objects. Even the Ambient Color is black, making the object appear completely dark. If we do not want to incur the performance cost of making any of the lights in the scene &#39;Mixed&#39; or &#39;Realtime&#39;, we can use Lighting Probes to apply lighting from the lights in &#39;Baked&#39; mode to dynamic objects as well.</span><img src="Resources/Lightbaking/NoProbeCapsule.png" referrerpolicy="no-referrer" alt="&quot;NoProbeCapsule&quot;"></p><p><span>Let&#39;s add a Lighting Probe Group to our scene.</span></p><p><img src="Resources/Lightbaking/LightingProbeAddition.png" referrerpolicy="no-referrer" alt="&quot;LightingProbeAddition&quot;"></p><p><span>After adding the Lighting Probe Group to the scene, we will encounter the default cubic arrangement. Each yellow sphere gizmo we see in the Scene view represents the location of a light probe. When we perform the light bake process again in Unity, this time, lighting calculations will be made not only for static objects but also for the locations of these yellow spheres. At runtime, dynamic objects will apply the lighting they receive from the nearest probes to themselves.</span>
+<img src="Resources/Lightbaking/LightProbeGizmo.png" referrerpolicy="no-referrer" alt="&quot;LightProbeGizmo&quot;"></p><p><span>To achieve a pleasing visual result, it&#39;s crucial to adjust the quantity and locations of probes carefully. </span><strong><span>It&#39;s important to ensure that probes are not contained within any mesh.</span></strong><span> Since meshes cannot receive lighting inside them, they will calculate the lighting at that point as darkness, causing objects near those dynamic objects to appear dark.</span></p><p><span>To increase the number of probes and adjust their locations, you can switch to edit mode by clicking the &#39;Edit Light Probes&#39; button in the Light Probe Group component. Then, you can make necessary adjustments using the &#39;Add&#39;, &#39;Duplicate&#39;, &#39;Delete&#39; options on the component.</span></p><p><img src="Resources/Lightbaking/LightProbeGroupComponent.png" referrerpolicy="no-referrer" alt="&quot;ProbeGroupComponent&quot;"></p><p><span>Note: When adjusting probe locations, with edit mode enabled, you can select and move probes (yellow spheres) multiple times. Necessary adjustments can be made more easily when the Scene view is in isometric or 2D mode.</span></p><p><img src="Resources/Lightbaking/EditingLightProbes.gif" referrerpolicy="no-referrer" alt="&quot;EditProbes&quot;"></p><p><span>After placing probes or making any modifications to the probes, we need to regenerate lighting by going to Window / Rendering / Lighting and selecting &#39;Generate Lighting&#39; for the changes to take effect.</span></p><p><span>After repeating the bake process, as you can see in the image below, our capsule in the scene is no longer dark. If the &#39;Blend Probes&#39; option is selected under the Light Probes section in the Mesh Renderer component of the capsule, it applies the lighting from the nearest probes to itself inversely proportional to the distance from them.</span></p><p><img src="Resources/Lightbaking/CapsuleProbeInteraction.png" referrerpolicy="no-referrer" alt="&quot;CapsuleProbeInteraction&quot;"></p><p><span>Here, we can see the importance of the placement of probes. We need to place these probes in locations where the behavior of light changes in our scene. For example, let&#39;s consider a situation where we do not place any probes in relatively dark or shadowed areas behind a wall or object.</span></p><p><span>If a dynamic object in a dark area interacts with the nearest probes to it, and if the probes nearby are in bright areas, the object will behave as if it is also receiving that brightness.</span></p><p><span>In the image below, despite the capsule being behind the wall, because there is no probe on the side where the wall is located, it interacts with the probes inside the room, thus receiving the lighting present in the room.</span><img src="Resources/Lightbaking/CapsuleWallNoInteraction.gif" referrerpolicy="no-referrer" alt="&quot;CapsuleBehindWall&quot;"></p><p><span>For the lighting provided by probes to dynamic objects in the scene to be of high quality, we should place probes in locations where the behavior of light changes. (For example, on both the inner and outer surfaces of a wall, under objects such as umbrellas or ceilings that cast shadows on both the top and bottom surfaces.)</span></p><p><span>In a scenario where we have placed probes on both sides of the wall, we can observe that the capsule now responds differently to being inside and outside the room.</span></p><p><img src="Resources/Lightbaking/CapsuleWallInteraction.gif" referrerpolicy="no-referrer" alt="&quot;CapsuleBehindWall&quot;"></p><p><span>Similarly, placing a probe under the chandelier in the middle of the room due to the presence of a point light and placing another probe in front of the window in the room due to the presence of an area light will enhance the quality of lighting for dynamic objects in the scene.</span></p><p><span>When we increase the number of probes in the room and place our probes where the behavior of light changes, you can observe that dynamic objects respond more sensibly to lighting.</span><img src="Resources/Lightbaking/CapsuleRoomInteraction.gif" referrerpolicy="no-referrer" alt="&quot;CapsuleRoomInteraction&quot;"></p><ul><li><p><span>As the number of probes in the scene increases, the bake time may extend.</span></p></li><li><p><span>Unless the number of probes and the scene size increase significantly, the runtime processing costs can be considered nearly zero compared to real-time lighting.</span></p></li><li><p><span>For shadows of objects affected by global illumination with probes, fake shadow meshes can be used, or a Directional Light in Realtime mode, interacting only with dynamic objects and with culling mask set up to affect only dynamic objects, can be added.</span></p></li></ul><p><span>When adding lights to shadow dynamic objects in the scene, you can find some settings that need to be configured under the Shadows section in your Render Pipeline Asset for SRP. If you don&#39;t know which Render Pipeline Asset the project is using, you can see it from the Edit / Project Settings / Graphics menu.</span></p><p><img src="Resources/Lightbaking/RenderPipelineAssetShadows.png" referrerpolicy="no-referrer" alt="&quot;RenderPipelineAssetShadows&quot;"></p><p><strong><span>- Max Distance:</span></strong><span> Determines the maximum distance at which shadows of objects will be visible. For example, Unity aims to achieve performance gains by ensuring that shadows of objects beyond 150 units in Unity units are not rendered.</span></p><p><strong><span>- Cascade Count:</span></strong><span> Determines how many cascades will be used during shadow rendering. If shadows near the camera are too jagged or pixelated, you need to increase this number. The number of cascades directly affects performance. If the cascade count is greater than 1, the number of cascades for distant objects will be less depending on the camera distance. You can adjust how many cascades will be used at what distance using the sliders here.</span></p><p><strong><span>- Depth Bias:</span></strong><span> Affects the distance between the shadows and the surface of the shadow-casting object. It is configured to address issues like self-shadowing in shadows of meshes with complex geometry.</span></p><p><strong><span>- Normal Bias:</span></strong><span> Functions similarly to Depth Bias.</span></p><p><strong><span>- Soft Shadows:</span></strong><span> If not enabled, even if soft shadows are selected in lights, soft shadows cannot be achieved.</span></p><h2 id='lightmap-data-in-prefabs---tool'><span>Lightmap Data in Prefabs - Tool</span></h2><ul><li><p><span>Unity, precomputed lighting data is kept associated with scene files. There are many limitations to this approach that can be headache-inducing for developers. Although these issues are addressed with Unity 2023, there are various workarounds available in the 2021 version. One of these workarounds is to maintain references to textures that need to be added to the Lightmap on prefabs and add them to the lighting settings when the prefabs are spawned.</span></p><p><span>However, there is a drawback to this method, which is the inability to find a way to bake probe data into the prefab yet.</span></p><p><span>There are two different ways to use Prefab Lightmaps:</span></p><p><strong><span>1. Prefabricated Mode:</span></strong></p><ul><li><p><span>Recommended for scenarios where Lighting Probes are not used. Lightmap data is kept on the prefab. Prefabs spawned in an empty scene come with their own lighting. If your lighting system does not include lighting probes and you bake static objects while using real-time lighting for dynamic objects, you should use this mode.</span></p></li></ul><p><strong><span>2. Additive Mode:</span></strong></p><ul><li><p><span>In scenarios where you use Lighting Probes, since probe data is compiled within Unity, we face issues with keeping this data in prefabs in versions prior to Unity 2023. Therefore, if you use Probes, you will need an empty scene where you bake the lights of the prefab. For example, let&#39;s say we have a &#39;Room&#39; prefab whose lights we bake in a &#39;Room Scene&#39;. After the bake process, we delete this prefab from the Room scene. Now, our &#39;Room Scene&#39; only serves as an empty container hierarchy holding Probe data. In this case, no matter which scene we spawn the &#39;Room&#39; prefab in, a script will load the &#39;Room Scene&#39; additively to that scene. When the prefab is destroyed, the script unloads this scene.</span></p></li></ul></li></ul><h3 id='prefabricated-mode-usage'><span>Prefabricated Mode Usage</span></h3><p><span>In Unity, we create our prefab in an empty scene and add the Prefab Lightmap Data component to the parent object. We select &#39;Prefabricated&#39; as the implementation.</span></p><p><img src="Resources/Lightbaking/AddingPLD.png" referrerpolicy="no-referrer" alt="&quot;AddingPLD&quot;"></p><p><span>After making the necessary light settings in our scene as shown above, we generate our lighting through Window / Rendering / Lighting.</span></p><p><span>Then, we overwrite this data onto our prefab using the Bake button on the script.</span></p><p><span>If everything worked smoothly, when we add our prefab to the scene without any light sources, it will now come with its own light data, as shown below.</span>
+<img src="Resources/Lightbaking/PrefabtoScene.gif" referrerpolicy="no-referrer" alt="&quot;PrefabToScene&quot;"></p><h3 id='additive-mode-usage'><span>Additive Mode Usage</span></h3><p><span>In Unity, in an empty scene, we create our prefab and add the Prefab Lightmap Data component to the parent object. We choose &#39;Additive&#39; as the implementation.</span></p><p><span>Then, we generate lighting in our scene. We press the bake button on the prefab and overwrite the lightmap data onto the prefab. After that, we delete this prefab from the scene. We save and add this scene, where we performed the Generate operation, to the build settings. We write the exact name as it appears in the build settings into the &#39;Scene Name&#39; section of the prefab.</span></p><p><span>Now, whenever we spawn this prefab into any scene, it will load the empty scene where we generated the lighting, including probe data, additively, to bring the light data.</span>
+</div></p></div></div>
+</body>
+</html>
