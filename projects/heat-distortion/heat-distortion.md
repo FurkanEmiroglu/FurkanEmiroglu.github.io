@@ -1,11 +1,6 @@
 ## Distortion Effects in Unity
 
 <div style="text-align: justify;">
-
-**Result:** https://www.youtube.com/watch?v=nFBrQayNHow
-
-
-
 There are various ways to create distortion effects in Unity. One of them is to access the frame texture through the OnRenderImage callback for the Built-in pipeline and perform a blit operation on this texture. For URP, an equivalent method can be considered as making adjustments on the Opaque Texture within the Render Pipeline Asset. 
 
 You need to enable Opaque Texture option from your Universal Render Pipeline Asset in URP. This way, we will be able to use **"_CameraColorTexture"** in our HLSL file and/or **Screen Color** node in Shader Graph.
